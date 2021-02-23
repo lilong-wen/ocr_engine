@@ -201,11 +201,12 @@ class Reader(object):
         if detail == 0:
             return [item[1] for item in result]
         else:
-            return result
+            # return result
+            return [[item[0], item[1]] for item in result]
 
     def readtext(self, image, decoder = 'greedy', beamWidth= 5, batch_size = 1,\
-                 workers = 0, allowlist = None, blocklist = None, detail = 1,\
-                 rotation_info = None, paragraph = False, min_size = 20,\
+                 workers = 0, allowlist = None, blocklist = None, detail = 0,\
+                 rotation_info = None, paragraph = True, min_size = 20,\
                  contrast_ths = 0.1,adjust_contrast = 0.5, filter_ths = 0.003,\
                  text_threshold = 0.7, low_text = 0.4, link_threshold = 0.4,\
                  canvas_size = 2560, mag_ratio = 1.,\
